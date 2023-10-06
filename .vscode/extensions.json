@@ -1,8 +1,3 @@
 {
-  "recommendations": [
-    "dbaeumer.vscode-eslint",
-    "esbenp.prettier-vscode",
-    "prisma.prisma",
-    "foxundermoon.shell-format"
-  ]
+  "recommendations": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode", "prisma.prisma", "foxundermoon.shell-format"]
 }

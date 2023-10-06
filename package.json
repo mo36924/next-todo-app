@@ -15,7 +15,7 @@
     "start": "DATABASE_URL=file:${TMPDIR}prisma.db run-s start:*",
     "start:prisma": "prisma migrate deploy",
     "start:next": "next start",
-    "deploy": "gcloud run deploy nextjs-app-router --region asia-northeast1 --allow-unauthenticated --max-instances 1 --source .",
+    "deploy": "gcloud run deploy next-todo-app --region asia-northeast1 --allow-unauthenticated --max-instances 1 --source .",
     "lint": "npm-run-all clean codegen --aggregate-output -p lint:* build:next",
     "lint:prettier": "prettier --check .",
     "lint:next": "next lint",
@@ -58,12 +58,14 @@
     "del-cli": "^5.1.0",
     "eslint": "^8.50.0",
     "eslint-config-next": "^13.5.4",
-    "npm-run-all": "^4.1.5",
     "open-cli": "^7.2.0",
     "postcss": "^8.4.31",
     "prettier": "^3.0.3",
-    "sort-package-json": "^2.6.0",
+    "sort-package-json": "1.51.0",
     "typescript": "^5.2.2",
     "zod-prisma-types": "^2.7.9"
+  },
+  "engines": {
+    "node": "^18.0.0"
   }
 }
