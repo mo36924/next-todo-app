@@ -1,3 +1,48 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "plugins": ["@typescript-eslint"],
+  "rules": {
+    "no-var": "error",
+    "prefer-const": "error",
+    "@typescript-eslint/no-unused-vars": "error",
+    "curly": "error",
+    "sort-imports": ["error", { "ignoreDeclarationSort": true }],
+    "import/order": ["error", { "alphabetize": { "order": "asc" } }],
+    "@typescript-eslint/padding-line-between-statements": [
+      "error",
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": [
+          "import",
+          "export",
+          "class",
+          "function",
+          "block",
+          "block-like",
+          "multiline-expression",
+          "multiline-const",
+          "multiline-let"
+        ]
+      },
+      {
+        "blankLine": "always",
+        "prev": [
+          "import",
+          "export",
+          "class",
+          "function",
+          "block",
+          "block-like",
+          "multiline-expression",
+          "multiline-const",
+          "multiline-let"
+        ],
+        "next": "*"
+      },
+      { "blankLine": "never", "prev": "import", "next": "import" },
+      { "blankLine": "never", "prev": "*", "next": ["case", "default"] },
+      { "blankLine": "never", "prev": ["case", "default"], "next": "*" }
+    ]
+  }
 }
