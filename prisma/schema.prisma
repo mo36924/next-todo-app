@@ -13,8 +13,21 @@ generator zod {
   coerceDate = false
 }
 
-model User {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
+model Session {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  sid       String   @unique
+  todos     Todo[]
+}
+
+model Todo {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  /// @zod.string.trim().min(1).max(100)
+  title     String
+  completed Boolean  @default(false)
+  session   Session  @relation(fields: [sessionId], references: [id])
+  sessionId Int
 }
